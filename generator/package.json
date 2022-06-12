@@ -11,7 +11,6 @@
     "license": "ISC",
     "dependencies": {
         "css-loader": "^6.7.1",
-        "file-loader": "^6.2.0",
         "monaco-editor-webpack-plugin": "^7.0.1",
         "monaco-sql-languages": "^0.9.4",
         "style-loader": "^3.3.1",

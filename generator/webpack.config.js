@@ -8,12 +8,6 @@ module.exports = {
     mode: "development",
     entry: {
         output: "./index.js",
-        "sparksql.worker": "monaco-sql-languages/out/esm/sparksql/sparksql.worker.js",
-        "flinksql.worker": "monaco-sql-languages/out/esm/flinksql/flinksql.worker.js",
-        "hivesql.worker": "monaco-sql-languages/out/esm/hivesql/hivesql.worker.js",
-        "mysql.worker": "monaco-sql-languages/out/esm/mysql/mysql.worker.js",
-        "plsql.worker": "monaco-sql-languages/out/esm/plsql/plsql.worker.js",
-        "sql.worker": "monaco-sql-languages/out/esm/sql/sql.worker.js",
     },
     output: {
         path: output_path,
@@ -39,8 +33,58 @@ module.exports = {
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 1,
         }),
-        new webpack.BannerPlugin({ banner: `if (typeof exports === "undefined") { exports = {}; }\n`, raw: true }),
-        new MonacoWebpackPlugin(),
+        new MonacoWebpackPlugin({
+            customLanguages: [
+                {
+                    label: "sparksql",
+                    entry: undefined,
+                    worker: {
+                        id: "monaco-sql-languages/sparksqlWorker",
+                        entry: "monaco-sql-languages/out/esm/sparksql/sparksql.worker",
+                    },
+                },
+                {
+                    label: "flinksql",
+                    entry: undefined,
+                    worker: {
+                        id: "monaco-sql-languages/flinksqlWorker",
+                        entry: "monaco-sql-languages/out/esm/flinksql/flinksql.worker",
+                    },
+                },
+                {
+                    label: "hivesql",
+                    entry: undefined,
+                    worker: {
+                        id: "monaco-sql-languages/hivesqlWorker",
+                        entry: "monaco-sql-languages/out/esm/hivesql/hivesql.worker",
+                    },
+                },
+                {
+                    label: "mysql",
+                    entry: undefined,
+                    worker: {
+                        id: "monaco-sql-languages/mysqlWorker",
+                        entry: "monaco-sql-languages/out/esm/mysql/mysql.worker",
+                    },
+                },
+                {
+                    label: "plsql",
+                    entry: undefined,
+                    worker: {
+                        id: "monaco-sql-languages/plsqlWorker",
+                        entry: "monaco-sql-languages/out/esm/plsql/plsql.worker",
+                    },
+                },
+                {
+                    label: "sql",
+                    entry: undefined,
+                    worker: {
+                        id: "monaco-sql-languages/sqlWorker",
+                        entry: "monaco-sql-languages/out/esm/sql/sql.worker",
+                    },
+                },
+            ],
+        }),
     ],
     resolve: {
         fallback: {

@@ -16,6 +16,24 @@ MonacoEnvironment.getWorkerUrl = (_moduleId, label) => {
         if (label === "typescript" || label === "javascript") {
             return "ts.worker.js";
         }
+        if (label === "sparksql") {
+            return "sparksql.worker.js";
+        }
+        if (label === "flinksql") {
+            return "flinksql.worker.js";
+        }
+        if (label === "hivesql") {
+            return "hivesql.worker.js";
+        }
+        if (label === "mysql") {
+            return "mysql.worker.js";
+        }
+        if (label === "plsql") {
+            return "plsql.worker.js";
+        }
+        if (label === "sql") {
+            return "sql.worker.js";
+        }
         return "editor.worker.js";
     })();
     return serialized[file];

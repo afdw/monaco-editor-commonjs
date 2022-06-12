@@ -1,4 +1,4 @@
-import * as monaco from "..";
+import { monaco } from "..";
 
 monaco.editor.create(document.body, {
     value: "select * from tb_test",

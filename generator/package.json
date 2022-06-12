@@ -1,0 +1,21 @@
+{
+    "name": "monaco-editor-commonjs-generator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "css-loader": "^6.7.1",
+        "file-loader": "^6.2.0",
+        "monaco-editor-webpack-plugin": "^7.0.1",
+        "monaco-sql-languages": "^0.9.4",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.9.2"
+    }
+}

@@ -1,9 +1,8 @@
 const webpack = require("webpack");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
-const CreateFileWebpack = require("create-file-webpack");
 const path = require("path");
 
-const output_path = path.resolve(__dirname, "dist");
+const output_path = path.resolve(__dirname, "../dist");
 
 module.exports = {
     mode: "development",
@@ -42,28 +41,6 @@ module.exports = {
         }),
         new webpack.BannerPlugin({ banner: `if (typeof exports === "undefined") { exports = {}; }\n`, raw: true }),
         new MonacoWebpackPlugin(),
-        new CreateFileWebpack({
-            path: output_path,
-            fileName: "index.js",
-            content: `module.exports = require("./output.js")["monaco-editor-commonjs"].monaco;\n`,
-        }),
-        new CreateFileWebpack({
-            path: output_path,
-            fileName: "package.json",
-            content: JSON.stringify(
-                {
-                    name: "monaco-editor-wrapper",
-                    version: "1.0.0",
-                    description: "",
-                    main: "index.js",
-                    keywords: [],
-                    author: "",
-                    license: "ISC",
-                },
-                null,
-                4,
-            ),
-        }),
     ],
     resolve: {
         fallback: {

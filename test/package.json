@@ -1,0 +1,17 @@
+{
+    "name": "monaco-editor-commonjs-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "tsc --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "electron": "^19.0.4",
+        "typescript": "^4.7.3"
+    }
+}

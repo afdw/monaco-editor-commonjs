@@ -1,5 +1,5 @@
 {
-    "name": "monaco-editor-commonjs",
+    "name": "@afdw/monaco-editor-commonjs",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -9,5 +9,6 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "repository": "git://github.com/afdw/monaco-editor-commonjs.git"
 }

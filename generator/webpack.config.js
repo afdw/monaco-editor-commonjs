@@ -16,6 +16,7 @@ module.exports = {
             name: "monaco-editor-commonjs",
             type: "commonjs",
         },
+        publicPath: "",
     },
     module: {
         rules: [
